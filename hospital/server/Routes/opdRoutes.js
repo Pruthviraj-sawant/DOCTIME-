@@ -40,10 +40,28 @@ router.post("/opd/:hospitalId", async (req, res) => {
 
 
 // Get all OPD records (Admin only)
+// router.get("/dashboard", authMiddleware, async (req, res) => {
+//   const opdRecords = await OPD.find(req.body);
+//   res.json(opdRecords);
+//   console.log(opdRecords);
+// });
 router.get("/dashboard", authMiddleware, async (req, res) => {
-  const opdRecords = await OPD.find(req.body);
-  res.json(opdRecords);
-  console.log(opdRecords);
+  try {
+    console.log("Request received at /dashboard");
+    const adminId = req.user.id; // Assuming the authMiddleware sets req.user with the authenticated admin
+
+    // Validate admin ID
+    if (!mongoose.Types.ObjectId.isValid(adminId)) {
+      return res.status(400).json({ error: "Invalid Admin ID" });
+    }
+
+    // Fetch OPD records associated with this admin/hospital
+    const opdRecords = await OPD.find({ hospitalId: adminId });
+
+    res.json(opdRecords);
+  } catch (error) {
+    res.status(500).json({ error: error.message });
+  }
 });
 
 module.exports = router;

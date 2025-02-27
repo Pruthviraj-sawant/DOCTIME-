@@ -17,7 +17,12 @@ export const submitDocForm = async (data) => {
     throw error;
   }
 };
+// export const getOpdRecords = (token) =>
+//   axios.get(`${BASE_URL}/dashboard`, { headers: { Authorization: token } });
+
 export const getOpdRecords = (token) =>
-  axios.get(`${BASE_URL}/dashboard`, { headers: { Authorization: token } });
+  axios.get(`${BASE_URL}/dashboard`, {
+    headers: { Authorization: `Bearer ${token}` },
+  });
 export const getdoclist = (token) =>
   axios.get(`${BASE_URL}/`, { headers: { Authorization: token } });
