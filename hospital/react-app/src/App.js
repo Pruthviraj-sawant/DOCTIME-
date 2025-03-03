@@ -7,6 +7,7 @@ import Navbar from './components/Navbar';
 import ProtectedRoute  from "./components/Protectedroutes";
 import Doclist from "./components/doclist";
 import DoctorForm from "./components/Docform";
+import './App.css';
 
 function App() {
   return (

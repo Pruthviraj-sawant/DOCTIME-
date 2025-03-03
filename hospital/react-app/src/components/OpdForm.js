@@ -26,7 +26,7 @@ const OpdForm = () => {
   const handleChange = (e) => {
     setFormData({ ...formData, [e.target.name]: e.target.value });
   };
-  const hospitalId = "67b022d51747853a02a6c835"; // Example of dynamic hospitalId
+  const hospitalId = formData.hospitalId; // Example of dynamic hospitalId
   const opdData = {
     ...formData
   };
@@ -43,7 +43,7 @@ const OpdForm = () => {
 
   return (
     <div className="max-w-3xl mx-auto p-6 bg-white shadow-lg rounded-lg">
-      <h2 className="text-2xl font-bold mb-4">OPD Form</h2>
+      <h2 className="text-2xl font-bold mb-4 ">OPD Form</h2>
       <form onSubmit={handleSubmit} className="grid grid-cols-2 gap-4">
         {Object.keys(formData).map((key) => (
           <div key={key}>
