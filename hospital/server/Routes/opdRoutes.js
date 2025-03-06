@@ -9,6 +9,7 @@ const router = express.Router();
 const mongoose = require("mongoose");
 
 router.post("/opd/:hospitalId", async (req, res) => {
+  
   try {
     const { hospitalId } = req.params; // Get the dynamic hospitalId from the URL
 

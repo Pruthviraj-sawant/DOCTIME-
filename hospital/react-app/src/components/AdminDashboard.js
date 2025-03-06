@@ -26,6 +26,7 @@ const AdminDashboard = ({ children }) => {
             <th className="border p-2">Full Name</th>
             <th className="border p-2">Age</th>
             <th className="border p-2">Symptoms</th>
+            <th className="border p-2">Appointment Number</th>
           </tr>
         </thead>
         <tbody>
