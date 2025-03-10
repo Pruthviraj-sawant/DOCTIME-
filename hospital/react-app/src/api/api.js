@@ -26,4 +26,4 @@ export const getOpdRecords = (token) =>
     headers: { Authorization: `Bearer ${token}` },
   });
 export const getdoclist = (token) =>
-  axios.get(`${BASE_URL}/`, { headers: { Authorization: token } });
+  axios.get(`${BASE_URL}/doctors`, { headers: { Authorization: token } });

@@ -15,7 +15,7 @@ router.post("/dashboard/add", async (req, res) => {
 });
 
 // Get all hospitals with bed availability
-router.get("/", async (req, res) => {
+router.get("/doctors", async (req, res) => {
   try {
     const hospitals = await Doctor.find();
     res.json(hospitals);
