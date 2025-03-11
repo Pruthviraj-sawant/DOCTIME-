@@ -35,6 +35,7 @@ const AdminDashboard = ({ children }) => {
               <td className="border p-2">{record.fullName}</td>
               <td className="border p-2">{record.age}</td>
               <td className="border p-2">{record.symptoms}</td>
+              
             </tr>
           ))}
         </tbody>

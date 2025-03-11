@@ -19,7 +19,7 @@ function App() {
         <Routes>
           <Route path="/" element={<> <OpdForm/></>} />
           <Route path="/doctors" element={<Doclist/>}></Route>
-          <Route path="/dashboard" element={<ProtectedRoute><AdminDashboard><DoctorForm/></AdminDashboard></ProtectedRoute>} />
+          <Route path="/dashboard" element={<ProtectedRoute><AdminDashboard></AdminDashboard><DoctorForm/></ProtectedRoute>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />
         </Routes>
